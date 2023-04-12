@@ -1,6 +1,6 @@
 //es la entidad y estructura
 
-package item
+package domain
 
 import "time"
 

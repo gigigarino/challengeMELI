@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"internal/domain"
+	"github.com/gigigarino/challengeMELI"
 )
 /*
 en esta capa definimos una estructura y una interface con los metodos o casos de uso

@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/gigigarino/challengeMELI2/internal/domain"
+import "gigigarino/challengeMELI/internal/domain"
 
 //definimos estructura
 type itemRepository struct {
