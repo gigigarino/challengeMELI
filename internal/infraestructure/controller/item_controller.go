@@ -55,7 +55,7 @@ func (ctrl *ItemController) GetAllItems(ctx *gin.Context){
 
 
 //func additem post
-func(ctrl *ItemController) addItem(ctx *gin.Context){
+func(ctrl *ItemController) AddItem(ctx *gin.Context){
 	request := ctx.Request
 
 	var item domain.Item

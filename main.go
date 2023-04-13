@@ -6,7 +6,9 @@ package main
 import (
 	"log"
 	"net/http"
-	
+	"gigigarino/challengeMELI/internal/infraestructure/controller"
+	"gigigarino/challengeMELI/internal/infraestructure/repository"
+	"gigigarino/challengeMELI/internal/usecase"
 	"github.com/gin-gonic/gin"
 )
 
@@ -26,17 +28,19 @@ func main() {
 	r := gin.Default()
 
 	//va el repo/usecase/controller
-
+	repo := repository.NewItemRepository()
+	usecase := usecase.NewItemUsecase(repo)
+	ctrl := controller.NewItemController(usecase)
 
 	//van los endpoint
 	/*------GETS -------*/
 	//r.GET("/", Index)
 	//r.GET("v1/listaInicial", GetListaInicial)
-	r.GET("v1/items/:id", GetItemById)
-	r.GET("v1/items", GetAllItems)
+	r.GET("v1/items/:id", ctrl.GetItemById)
+	r.GET("v1/items", ctrl.GetAllItems)
 
 	/*------POST -------*/
-	r.POST("v1/items", AddItem)
+	r.POST("v1/items", ctrl.AddItem)
 
 	/*------PUT-------*/
 	//r.PUT("v1/items/:id", UpdateItem)
