@@ -17,3 +17,8 @@ type Item struct {
 }
 
 //aca iria la interface de repositorio pero mas adelante
+type ItemRepository interface {
+	GetAllItems() []Item
+	GetItemById(id int)*Item
+	AddItem(item Item)*Item
+}

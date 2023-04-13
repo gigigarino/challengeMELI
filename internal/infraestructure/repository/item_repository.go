@@ -1,6 +1,9 @@
 package repository
 
-import "gigigarino/challengeMELI/internal/domain"
+import (
+	"gigigarino/challengeMELI/internal/domain"
+	
+)
 
 //definimos estructura
 type itemRepository struct {
@@ -12,15 +15,18 @@ func NewItemRepository() domain.ItemRepository {
 	return &itemRepository{}
 }
 
-
-func (r *itemRepository) GetAllItems(){
+/*func (r *itemRepository) GetListaInicial() []domain.Item {
+	return r.articulos
+}
+*/
+func (r *itemRepository) GetAllItems() []domain.Item {
 	return r.articulos
 }
 
-func (r *itemRepository) GetItemById(id int) *domain.item{
+func (r *itemRepository) GetItemById(id int) *domain.Item{
 	for _, item := range r.articulos {
 		if item.ID == id {
-			return item
+			return &item
 		}
 	}
 	return nil

@@ -1,8 +1,12 @@
+//resolver problema del go
+//go mod init 'yourmodulename' 
+//go get 'yourpckagename'
 package main
 
 import (
 	"log"
 	"net/http"
+	
 	"github.com/gin-gonic/gin"
 )
 
